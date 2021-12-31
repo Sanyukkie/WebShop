@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<center>
+    <h1>Add Attribute</h1>
+    <br/><br/>
+
+    <div class="container">
+        {% if submitted %}
+
+        Your Product Was Submitted Successfully!
+
+        {% else %}
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {{ pform.as_p }}
+
+                <input type="submit" value="Submit" class="btn btn-secondary">
+
+            </form>
+        {% endif %}
+    </div>
+
+
+
+</center>
+
+
+{% endblock %}
